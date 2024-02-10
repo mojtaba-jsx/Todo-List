@@ -3,7 +3,9 @@ import './Header.css'
  class Header extends Component {
   render() {
     return (
-      <div>Header</div>
+      <div className='header'>
+        <h1 className='header-title'>TODO LIST</h1>
+      </div>
     )
   }
 }

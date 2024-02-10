@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'ConcertOne-Regular';
+    src: url('../../fonts/ConcertOne-Regular.ttf');
+}
+.header-title{
+    text-align: center;
+    font-family: 'ConcertOne-Regular', Courier, monospace;
+    font-size: 4rem;
+    font-weight: bolder;
+    letter-spacing: 1rem;
+    color: #8322E3;
+
+    text-shadow: 0 0 2px #a579d1, 
+    -4px 5px 0 #231036, 
+    -7px 11px 0 #9949e4,
+    -12px 17px 0 #ab6dea,
+    -17px 23px 0 #9f65da;
+    transition: all 140ms ease-in;
+}
+
+.header-title:hover{
+    text-shadow: none;
+    cursor: pointer;
+}
+

@@ -5,7 +5,7 @@ import TodoList from './TodoList/TodoList'
  class App extends Component {
   render() {
     return (
-      <div>
+      <div className='app'>
         <TodoList/>
       </div>
     )
