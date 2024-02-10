@@ -9,26 +9,52 @@ class TodoList extends Component {
     super();
     this.state = {
       status: "select option",
-      todoTitle: "inputValue",
+      todoTitle: "",
       todos: [{ completed: true, id: 1, title: "inputvalue" }],
     };
   }
 
+  inputHandler(event) {
+    this.setState({
+      todoTitle: event.target.value,
+    });
+  }
   render() {
     return (
       <div>
         <Header />
 
         <div className="todo-input">
-          <label class="input-group__label" for="myInput">
-            My Label
-          </label>
-          <input
-            type="text"
-            id="myInput"
-            class="input-group__input"
-            value="This is my input"
-          />
+          <div className="todo-input-box">
+            <input
+              onChange={(event) => this.inputHandler(event)}
+              type="text"
+              id="myInput"
+              class="input-group__input"
+              placeholder="Enter Todo"
+              value={this.state.todoTitle}
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 4.5v15m7.5-7.5h-15"
+              />
+            </svg>
+          </div>
+
+          <select className="todo-status">
+            <option value="all">All</option>
+            <option value="complete">Completed</option>
+            <option value="uncomplete">UnCompleted</option>
+          </select>
         </div>
 
         <div className="todos">

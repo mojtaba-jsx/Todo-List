@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'ConcertOne-Regular';
+    src: url('../fonts/ConcertOne-Regular.ttf');
+}
+
+.todo-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-group__input{
+    padding: 1rem 8rem;
+    font-size: 1.2rem;
+    font-family: 'ConcertOne-Regular', Courier, monospace;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    margin-right: 1rem;
+}
+
+.input-group__input::placeholder{
+    font-size: 1.2rem;
+}
+
+
+.todo-status{
+    padding: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    font-family: 'ConcertOne-Regular', Courier, monospace;
+    font-size: 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.todo-input-box{
+    position: relative;
+}
+
+.todo-input-box svg{
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 0.8rem;
+    right: 1rem;
+    cursor: pointer;
+}
