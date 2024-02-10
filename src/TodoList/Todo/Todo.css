@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "ConcertOne-Regular";
+  src: url("../../fonts/ConcertOne-Regular.ttf");
+}
+
+.todo {
+  width: 26rem;
+  height: 14rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  transition: all 140ms ease-in;
+
+  background: rgba( 134, 23, 198, 0.55 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4.5px );
+  -webkit-backdrop-filter: blur( 4.5px );
+  border-radius: 10px;
+}
+
+.todo:hover{
+  transform: scale(1.1);
+}
+.todo__info-text {
+    color: #ffff;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 14rem;
+  display: block;
+  font-family: "ConcertOne-Regular", Courier, monospace;
+}
+
+.completed-btn svg,
+.remove-btn svg {
+  width: 2rem;
+  height: 2rem;
+  color: #ffff;
+}
+
+.todo-btns {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  z-index: 10000;
+  bottom: 0;
+}
+
+.todo-btns button {
+  width: 13rem;
+  height: 4rem;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  /* border-radius: 10px; */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+}
