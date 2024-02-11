@@ -1,6 +1,8 @@
+
 .todo-shape2 {
   position: absolute;
-  bottom: -20;
+  bottom: 0;
   right: 0;
   z-index: -100;
+  position: fixed;
 }

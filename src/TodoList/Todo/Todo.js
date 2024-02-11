@@ -3,9 +3,9 @@ import "./Todo.css";
 class Todo extends Component {
   render() {
     return (
-      <div className="todo">
+      <div className={`todo ${this.props.completed ? 'completed' :''}`}>
         <div className="todo__info">
-          <span className="todo__info-text">Learn English</span>
+          <span className="todo__info-text">{this.props.title}</span>
           <div className="todo-btns">
             <button className="completed-btn">
               <svg

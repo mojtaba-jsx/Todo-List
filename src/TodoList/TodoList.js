@@ -11,28 +11,51 @@ class TodoList extends Component {
     this.state = {
       status: "select option",
       todoTitle: "",
-      todos: [{ completed: true, id: 1, title: "inputvalue" }],
+      todos: [],
     };
+
+    this.todoTitleHandler =this.todoTitleHandler.bind(this)
+    this.addTodo = this.addTodo.bind(this)
   }
 
-  inputHandler(event) {
+// *Methods
+  todoTitleHandler(event){
     this.setState({
-      todoTitle: event.target.value,
-    });
+      todoTitle:event.target.value
+    })
   }
+
+  addTodo(event){
+    event.preventDefault();
+
+    let newTodoObject ={
+      id:this.state.todos.length +1 ,
+      title:this.state.todoTitle,
+      completed:false,
+    }
+    this.setState(preveState=>{
+      return{
+        todos:[...preveState.todos,newTodoObject],
+        todoTitle:''
+      }
+    })
+  }
+
+
+
   render() {
     return (
       <div>
         <Header />
 
         <div className="todo-input">
-          <div className="todo-input-box">
+          <form className="todo-input-box" onSubmit={this.addTodo}>
             <input
-              onChange={(event) => this.inputHandler(event)}
+              onChange={this.todoTitleHandler}
               type="text"
               id="myInput"
               class="input-group__input"
-              placeholder="Enter Todo"
+              placeholder="WriteTodoPressEnter"
               value={this.state.todoTitle}
             />
             <svg
@@ -49,7 +72,7 @@ class TodoList extends Component {
                 d="M12 4.5v15m7.5-7.5h-15"
               />
             </svg>
-          </div>
+          </form>
 
           <select className="todo-status">
             <option value="all">All</option>
@@ -60,10 +83,12 @@ class TodoList extends Component {
 
         <div className="todos">
           <div className="todos__wrapper">
-            <Todo />
-            <Todo />
-            <Todo />
-            <Todo />
+            {
+              this.state.todos.map(todo=>(
+                <Todo {...todo} />
+              ))
+            }
+
           </div>
         </div>
 

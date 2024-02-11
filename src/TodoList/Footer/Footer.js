@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import './Footer.css'
- class Footer extends Component {
+import React, { Component } from "react";
+import "./Footer.css";
+class Footer extends Component {
   render() {
     return (
-      <div>
-                <div className="todo-shape2">
+      <div className="footer">
+        <div className="todo-shape2">
           <svg
-            width="512"
-            height="278"
+            width="200"
+            height="200"
             viewBox="0 0 512 278"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -34,8 +34,8 @@ import './Footer.css'
           </svg>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Footer
+export default Footer;

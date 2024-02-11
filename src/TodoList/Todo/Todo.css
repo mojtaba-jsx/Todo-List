@@ -22,7 +22,7 @@
 }
 .todo__info-text {
     color: #ffff;
-  font-size: 1.4rem;
+  font-size: 2rem;
   text-align: center;
   line-height: 14rem;
   display: block;
@@ -56,4 +56,9 @@
   /* border-radius: 10px; */
   border: 1px solid rgba(255, 255, 255, 0.18);
   cursor: pointer;
+}
+
+.completed{
+  opacity: 0.6;
+  text-decoration: line-through;
 }
