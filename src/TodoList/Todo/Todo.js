@@ -1,15 +1,26 @@
 import React, { Component } from "react";
 import "./Todo.css";
 class Todo extends Component {
+  removeClickHandler(id) {
+    this.props.onRemove(id);
+  }
+
+  editClickHandler(id){
+    this.props.onEdit(id)
+  }
+
   render() {
     return (
-      <div className={`todo ${this.props.completed ? 'completed' :''}`}>
+      <div className={`todo ${this.props.completed ? "completed" : ""}`}>
         <div className="todo__info">
           <span className="todo__info-text">{this.props.title}</span>
           <div className="todo-btns">
-            <button className="completed-btn">
+            <button
+              className="completed-btn"
+              onClick={this.editClickHandler.bind(this, this.props.id)}
+            >
               <svg
-              className="icon"
+                className="complete-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -24,9 +35,12 @@ class Todo extends Component {
                 />
               </svg>
             </button>
-            <button className="remove-btn">
+            <button
+              className="remove-btn"
+              onClick={this.removeClickHandler.bind(this, this.props.id)}
+            >
               <svg
-              className="icon"
+                className="remove-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"

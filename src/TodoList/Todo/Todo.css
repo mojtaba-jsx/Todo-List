@@ -33,7 +33,14 @@
 .remove-btn svg {
   width: 2rem;
   height: 2rem;
-  color: #ffff;
+  color: red;
+}
+
+.completed-btn svg{
+  color: rgb(104, 231, 104);
+}
+.remove-btn svg {
+  color: red;
 }
 
 .todo-btns {
@@ -62,3 +69,4 @@
   opacity: 0.6;
   text-decoration: line-through;
 }
+

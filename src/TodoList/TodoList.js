@@ -14,34 +14,55 @@ class TodoList extends Component {
       todos: [],
     };
 
-    this.todoTitleHandler =this.todoTitleHandler.bind(this)
-    this.addTodo = this.addTodo.bind(this)
+    this.todoTitleHandler = this.todoTitleHandler.bind(this);
+    this.addTodo = this.addTodo.bind(this);
+    this.removeTodo = this.removeTodo.bind(this);
+    this.editTodo = this.editTodo.bind(this);
   }
 
-// *Methods
-  todoTitleHandler(event){
+  // *Methods
+  todoTitleHandler(event) {
     this.setState({
-      todoTitle:event.target.value
-    })
+      todoTitle: event.target.value,
+    });
   }
 
-  addTodo(event){
+  addTodo(event) {
     event.preventDefault();
 
-    let newTodoObject ={
-      id:this.state.todos.length +1 ,
-      title:this.state.todoTitle,
-      completed:false,
-    }
-    this.setState(preveState=>{
-      return{
-        todos:[...preveState.todos,newTodoObject],
-        todoTitle:''
-      }
-    })
+    let newTodoObject = {
+      id: this.state.todos.length + 1,
+      title: this.state.todoTitle,
+      completed: false,
+    };
+    this.setState((preveState) => {
+      return {
+        todos: [...preveState.todos, newTodoObject],
+        todoTitle: "",
+      };
+    });
   }
 
+  removeTodo(todoId) {
+    let newTodos = this.state.todos.filter((todo) => {
+      return todo.id !== todoId;
+    });
+    this.setState({
+      todos: newTodos,
+    });
+  }
 
+  editTodo(todoId) {
+    let newTodos = [...this.state.todos];
+    newTodos.forEach((todo) => {
+      if (todo.id === todoId) {
+        todo.completed = !todo.completed;
+      }
+    });
+    this.setState({
+      todos: newTodos,
+    });
+  }
 
   render() {
     return (
@@ -83,12 +104,14 @@ class TodoList extends Component {
 
         <div className="todos">
           <div className="todos__wrapper">
-            {
-              this.state.todos.map(todo=>(
-                <Todo {...todo} />
-              ))
-            }
-
+            {this.state.todos.map((todo) => (
+              <Todo
+                {...todo}
+                onRemove={this.removeTodo}
+                onEdit={this.editTodo}
+                key={todo.id}
+              />
+            ))}
           </div>
         </div>
 
