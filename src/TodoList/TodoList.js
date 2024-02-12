@@ -9,15 +9,16 @@ class TodoList extends Component {
   constructor() {
     super();
     this.state = {
-      status: "select option",
       todoTitle: "",
       todos: [],
+      status: "all",
     };
 
     this.todoTitleHandler = this.todoTitleHandler.bind(this);
     this.addTodo = this.addTodo.bind(this);
     this.removeTodo = this.removeTodo.bind(this);
     this.editTodo = this.editTodo.bind(this);
+    this.statusHandler = this.statusHandler.bind(this);
   }
 
   // *Methods
@@ -64,6 +65,12 @@ class TodoList extends Component {
     });
   }
 
+  statusHandler(event) {
+    this.setState({
+      status: event.target.value,
+    });
+  }
+
   render() {
     return (
       <div>
@@ -95,23 +102,48 @@ class TodoList extends Component {
             </svg>
           </form>
 
-          <select className="todo-status">
+          <select className="todo-status" onChange={this.statusHandler}>
             <option value="all">All</option>
-            <option value="complete">Completed</option>
-            <option value="uncomplete">UnCompleted</option>
+            <option value="completed">Completed</option>
+            <option value="uncompleted">UnCompleted</option>
           </select>
         </div>
 
         <div className="todos">
           <div className="todos__wrapper">
-            {this.state.todos.map((todo) => (
-              <Todo
-                {...todo}
-                onRemove={this.removeTodo}
-                onEdit={this.editTodo}
-                key={todo.id}
-              />
-            ))}
+            {this.state.status === "completed" &&
+              this.state.todos
+                .filter((todo) => todo.completed)
+                .map((todo) => (
+                  <Todo
+                    {...todo}
+                    onRemove={this.removeTodo}
+                    onEdit={this.editTodo}
+                    key={todo.id}
+                  />
+                ))}
+
+            {this.state.status === "uncompleted" &&
+              this.state.todos
+                .filter((todo) => !todo.completed)
+                .map((todo) => (
+                  <Todo
+                    {...todo}
+                    onRemove={this.removeTodo}
+                    onEdit={this.editTodo}
+                    key={todo.id}
+                  />
+                ))}
+
+            {this.state.status === "all" &&
+              this.state.todos.map((todo) => (
+                <Todo
+                  {...todo}
+                  onRemove={this.removeTodo}
+                  onEdit={this.editTodo}
+                  key={todo.id}
+                />
+              ))}
           </div>
         </div>
 
