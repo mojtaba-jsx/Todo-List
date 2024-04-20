@@ -3,7 +3,6 @@
   src: url("../fonts/ConcertOne-Regular.ttf");
 }
 
-
 .todo-input {
   display: flex;
   justify-content: center;
@@ -58,7 +57,6 @@
   justify-content: space-between;
   flex-wrap: wrap;
   /* background-color: red; */
-
 }
 
 .shape-3 {
@@ -67,8 +65,6 @@
   top: 20rem;
   z-index: -100;
 }
-
-
 
 @media screen and (max-width: 640px) {
   .shape-3 {
@@ -80,7 +76,6 @@
   .todo-status {
     margin-top: 2rem;
   }
-  
 }
 @media screen and (max-width: 470px) {
   .input-group__input {
