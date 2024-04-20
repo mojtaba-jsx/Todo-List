@@ -3,6 +3,7 @@
   src: url("../fonts/ConcertOne-Regular.ttf");
 }
 
+
 .todo-input {
   display: flex;
   justify-content: center;
@@ -50,18 +51,50 @@
 }
 
 .todos__wrapper {
-  width: 1400px;
+  /* width: 1400px; */
   margin: 0 auto;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  /* background-color: red; */
+
 }
 
-
-.shape-3{
+.shape-3 {
   position: absolute;
   right: 20rem;
   top: 20rem;
   z-index: -100;
 }
 
+
+
+@media screen and (max-width: 640px) {
+  .shape-3 {
+    right: 2rem;
+  }
+  .todo-input {
+    flex-wrap: wrap;
+  }
+  .todo-status {
+    margin-top: 2rem;
+  }
+  
+}
+@media screen and (max-width: 470px) {
+  .input-group__input {
+    padding: 1rem 5rem;
+  }
+  .todo-shape1 {
+    left: -10rem;
+  }
+  .todo-shape2 {
+    right: -5rem;
+  }
+}
+@media screen and (max-width: 380px) {
+  .input-group__input {
+    padding: 1rem 2rem;
+  }
+}
