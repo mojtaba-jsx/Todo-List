@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Todo-List/static/css/main.4872b236.css",
+    "main.js": "/Todo-List/static/js/main.667811a0.js",
+    "static/media/ConcertOne-Regular.ttf": "/Todo-List/static/media/ConcertOne-Regular.646d19d3a58116d78c9c.ttf",
+    "index.html": "/Todo-List/index.html",
+    "main.4872b236.css.map": "/Todo-List/static/css/main.4872b236.css.map",
+    "main.667811a0.js.map": "/Todo-List/static/js/main.667811a0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4872b236.css",
+    "static/js/main.667811a0.js"
+  ]
+}
